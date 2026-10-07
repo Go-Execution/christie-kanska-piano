@@ -12,6 +12,11 @@
 
 # testing
 /coverage
+/test-results
+/playwright-report
+
+# local visual review captures
+/*.png
 
 # next.js
 /.next/
