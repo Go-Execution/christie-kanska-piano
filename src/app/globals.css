@@ -6,7 +6,7 @@ body { margin:0; background:var(--white); color:#090909; font-family:var(--sans)
 a { color:inherit; text-decoration:none; }
 button, input, textarea { font:inherit; }
 button, a { -webkit-tap-highlight-color:transparent; }
-img { display:block; filter:grayscale(1); }
+img { display:block; filter:none; }
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .black-section { position:relative; overflow:hidden; background:var(--black); color:white; }
 .black-section::after { content:""; position:absolute; inset:-25%; z-index:0; pointer-events:none; background:radial-gradient(circle at calc(50% + var(--pointer-x) * 28%) calc(50% + var(--pointer-y) * 28%),rgba(255,255,255,.07),transparent 29%); transform:translateZ(0); }
@@ -55,7 +55,7 @@ img { display:block; filter:grayscale(1); }
 @keyframes note-rise { 0% { opacity:0; transform:translate3d(0,0,0) rotate(-14deg); } 12% { opacity:.18; } 80% { opacity:.12; } 100% { opacity:0; transform:translate3d(calc(var(--note) * 7px - 25px),-110vh,0) rotate(18deg); } }
 
 [data-tilt] { --tilt-x:0deg; --tilt-y:0deg; transform:perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateZ(0); transform-style:preserve-3d; transition:transform .18s ease-out,filter .4s,box-shadow .4s; will-change:transform; }
-[data-tilt]:hover { filter:grayscale(1) contrast(1.06); box-shadow:0 24px 50px rgba(0,0,0,.24); }
+[data-tilt]:hover { filter:contrast(1.06) saturate(1.05); box-shadow:0 24px 50px rgba(0,0,0,.24); }
 .reveal-3d { transform-style:preserve-3d; perspective:1100px; }
 .piano-lines { transform:translate3d(calc(var(--pointer-x) * 12px),calc(var(--pointer-y) * 9px),0) rotateY(calc(var(--pointer-x) * 2deg)); transform-origin:center; transition:transform .15s linear; }
 .piano-lines path { stroke-dasharray:1500; stroke-dashoffset:1500; animation:draw-piano 2.2s cubic-bezier(.22,1,.36,1) .15s forwards; }
@@ -122,7 +122,7 @@ img { display:block; filter:grayscale(1); }
 .about-section h2 em { color:#666; font-weight:400; }
 .about-section p { max-width:680px; font-size:15px; line-height:1.85; }
 .about-section img { width:100%; height:430px; object-fit:cover; }
-.about-section img:hover { filter:grayscale(0) contrast(1.02); }
+.about-section img:hover { filter:contrast(1.03) saturate(1.06); }
 
 .live-section { display:grid; grid-template-columns:42% 58%; min-height:520px; border-top:1px solid #ccc; }
 .live-copy { display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:55px 7vw; }
